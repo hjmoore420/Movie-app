@@ -53,7 +53,8 @@ class Home extends React.Component {
   constructor(props){
     super(props)
     this.state ={
-      movies:[]
+      movies:[],
+      errorMessage: ''
     }
 
   }
@@ -67,10 +68,13 @@ class Home extends React.Component {
       this.setState({movies})
 
     })
+    .catch((error) =>{
+      this.setState({errorMessage: error})
+    })
  }
  
 render(){
-  const { movies } = this.state
+  const { movies, errorMessage } = this.state
   return (
     <div>
       <head>
@@ -89,6 +93,7 @@ render(){
                   <div className="col-lg-9">
                     <Carousel />
                     <div className="row">
+                      <p className="alert alert-danger">{errorMessage}</p>
                     <MovieList  movies={movies} />  
                     </div>
                   </div>
