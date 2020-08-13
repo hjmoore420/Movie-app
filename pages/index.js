@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 
-import Aside from '../component/aside'
-import Carousel from '../component/carousel'
-import MovieList from '../component/movieList'
+import Aside from '../components/aside'
+import Carousel from '../components/carousel'
+import MovieList from '../components/movieList'
 
 import {getMovies} from '../actions'
 

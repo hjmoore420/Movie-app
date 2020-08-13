@@ -1,6 +1,6 @@
 
-import Nav from '../component/navBar'
-import Footer from '../component/footer'
+import Nav from '../components/navBar'
+import Footer from '../components/footer'
 
 import styles from '../styles/Home.module.css'
 
