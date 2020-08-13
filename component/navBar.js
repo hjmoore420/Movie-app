@@ -1,3 +1,5 @@
+import Link from  'next/Link'
+
 const Navbar = () => {
 
     return(
@@ -9,19 +11,28 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
+              
               <li className="nav-item active">
-                <a className="nav-link" href="/">Home
-                  <span className="sr-only">(current)</span>
-                </a>
+              <Link href="/"> 
+                  <a className="nav-link">Home
+                    <span className="sr-only">(current)</span>
+                  </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="about">About</a>
+              <Link href="/about">
+                <a className="nav-link">About</a>
+                </Link>
               </li>
               <li className="nav-item">
+              <Link href="/services"> 
                 <a className="nav-link" href="services">Services</a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="contact">Contact</a>
+              <Link href="/contact">
+              <a className="nav-link" >Contact</a>
+                </Link>
               </li>
             </ul>
           </div>
