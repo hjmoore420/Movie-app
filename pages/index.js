@@ -38,7 +38,8 @@ Home.getInitialProps = async () => {
   const movies = await getMovies()
   const images = movies.map(movie =>({    
       id:`image-${movie.id}`,
-      image: movies.image }))
+      url: movie.banner,
+      name: movie.name}))
 
   return{
     movies,
