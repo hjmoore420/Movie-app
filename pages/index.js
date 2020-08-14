@@ -8,6 +8,7 @@ import {getMovies} from '../actions'
 
 
 export default function Home(props) {
+  const {images} = props
  
   return (
     <React.Fragment>
@@ -19,7 +20,7 @@ export default function Home(props) {
               <div className="row">
               <Aside appName={"Movie DB"}/>
                   <div className="col-lg-9">
-                    <Carousel />
+                    <Carousel  images={images }/>
                     <div className="row">
                     <MovieList  movies={props.movies || [ ]} />  
                     </div>
@@ -35,8 +36,12 @@ export default function Home(props) {
 
 Home.getInitialProps = async () => {
   const movies = await getMovies()
+  const images = movies.map(movie =>({    
+      id:`image-${movie.id}`,
+      image: movies.image }))
 
   return{
-    movies
+    movies,
+    images
   }
 }

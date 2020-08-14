@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 
 class MovieList extends React.Component {
@@ -22,11 +23,15 @@ class MovieList extends React.Component {
               <div key={movie.id} className="col-lg-4 col-md-6 mb-4">
               <div className="card h-100">
                     <div className="imageCut">
-                      <a href="#"><img className="card-img-top" src={movie.image} alt={movie.name} /></a>
+                    <Link href="/movies[id]" as={`/movies/${movie.id}`}>
+                      <a><img className="card-img-top" src={movie.image} alt={movie.name} /></a>
+                      </Link>
                     </div>
                     <div className="card-body">
                       <h4 className="card-title">
-                        <a href="#">{movie.name}</a>
+                      <Link href="/movies[id]" as={`/movies/${movie.id}`}>
+                        <a >{movie.name}</a>
+                        </Link>
                       </h4>
                       <p className="card-text">{this.shorten(movie.description,200)}</p>
                     </div>
@@ -45,15 +50,7 @@ class MovieList extends React.Component {
     )
   }
 }
-<style jsx>{`
 
-
-
-`}
-
-
-
-</style>
 
 
 
